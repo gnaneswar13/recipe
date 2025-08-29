@@ -25,19 +25,19 @@ public class RecipeService implements RecipeRepository {
                         Arrays.asList("fish", "potatoes", "flour", "oil", "spices")));
     }
 
-    // ✅ API 1: Get all recipes
+    // API 1: Get all recipes
     @Override
     public ArrayList<Recipe> getRecipes() {
         return new ArrayList<>(recipeBook.values());
     }
 
-    // ✅ API 3: Get recipe by ID
+    // API 3: Get recipe by ID
     @Override
     public Recipe getRecipeById(int recipeId) {
         return recipeBook.get(recipeId);
     }
 
-    // ✅ API 2: Add a new recipe (auto-increment ID)
+    // API 2: Add a new recipe (auto-increment ID)
     @Override
     public Recipe addRecipe(Recipe recipe) {
         int newId = ++currentId;
@@ -46,7 +46,7 @@ public class RecipeService implements RecipeRepository {
         return recipe;
     }
 
-    // ✅ API 4: Update recipe by ID
+    // API 4: Update recipe by ID
     @Override
     public Recipe updateRecipe(int recipeId, Recipe updatedRecipe) {
         if (!recipeBook.containsKey(recipeId)) {
@@ -57,7 +57,7 @@ public class RecipeService implements RecipeRepository {
         return updatedRecipe;
     }
 
-    // ✅ API 5: Delete recipe by ID
+    // API 5: Delete recipe by ID
     @Override
     public void deleteRecipe(int recipeId) {
         recipeBook.remove(recipeId);
